@@ -6,14 +6,11 @@ namespace WebApplication.Areas.Admin.Models
 {
     public class ApplicationViewModel
     {
-<<<<<<< HEAD
+
         public int ApplicationNo { get; set; }
-=======
->>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
         [Required]
         [StringLength(30)]
         public string StudentName { get; set; }
-
         [Required]
         [StringLength(30)]
         public string FatherName { get; set; }

@@ -56,7 +56,6 @@ namespace WebApplication.Areas.Admin.Services
             return ++appNo;
         }
 
-<<<<<<< HEAD
         public void UpdateStudent(ApplicationForm appForm)
         {
             var appNo = _context.ApplicationForms.Where(s=>s.ApplicationNo==appForm.ApplicationNo).FirstOrDefault();
@@ -67,12 +66,8 @@ namespace WebApplication.Areas.Admin.Services
 
             _context.ApplicationForms.Update(appForm); 
             _context.SaveChanges();
-=======
-        public void UpdateStudent()
-        {
-
->>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
         }
+
         public ApplicationForm getStudent(int AppNo)
         {
             var Student = _context.ApplicationForms.Where(s => s.ApplicationNo == AppNo).FirstOrDefault();

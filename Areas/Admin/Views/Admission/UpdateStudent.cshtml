@@ -1,17 +1,16 @@
 @using WebApplication.Areas.Admin.Models
 @using System.Collections.Generic
-<<<<<<< HEAD
+
 @model ApplicationForm
 @{
      ViewData["Title"]="AdmissionForm";
      var photo=Model.Photo;
      var studentsign=Model.StudentSignature;
      var parentsign=Model.ParentSignature;
-=======
+
 @model ApplicationViewModel
 @{
      ViewData["Title"]="AdmissionForm";
->>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
 }
 
 <h1>APPLICATION FORM</h1>
@@ -25,7 +24,6 @@
             </center>
             <table class="table">
                 <tr>
-<<<<<<< HEAD
                     <td><label >ApplicationNo</label></td>
                     <td>@Html.TextBoxFor(m=>m.ApplicationNo,new {@disabled=true})</td>
                 </tr>
@@ -34,7 +32,6 @@
                     <td><img id="PhotoPreview" src="/images/Photos/@photo" height="100" width="100">
                         <input type="file" name="StudentPhoto" id="StudentPhoto" onchange="PreviewImage()" />
                     <td>
-=======
                     <td><label>ApplicationNo</label></td>
                     <td>@ViewBag.appNo</td>
                 </tr>
@@ -43,7 +40,6 @@
                     <td><img id="PhotoPreview" height="100" width="100">
                         <input type="file" name="StudentPhoto" id="StudentPhoto" onchange="PreviewImage()" />
                         <td>
->>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
                             <br/>@* @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })*@
                 </tr>
                 <tr>
@@ -80,11 +76,8 @@
                 </tr>
                 <tr>
                     <td><label>Date of Birth as per SSC</label></td>
-<<<<<<< HEAD
                     <td><input type="date" name="DOB" value=Model.DOB></td>
-=======
                     <td><input type="date" name="DOB"></td>
->>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
                     @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
                 </tr>
                 <tr>
@@ -164,29 +157,23 @@
                 </tr>
                 <tr>
                     <td><label>Date of Admission</label></td>
-<<<<<<< HEAD
                     <td><input type="date" name="DateOfAdmission" value=Model.DateOfAdmission></td>
                 </tr>
                 <tr>
                     <td> <label>Signature of Student</label></td>
                     <td><img id="StudentSignPreview" src="/images/Photos/@studentsign" height="50" width="200">
-=======
                     <td><input type="date" name="DateOfAdmission"></td>
                 </tr>
                 <tr>
                     <td> <label>Signature of Student</label></td>
                     <td><img id="StudentSignPreview" height="50" width="200">
->>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
                         <input type="file" name="StudentSign" id="StudentSign" onchange="PreviewImage1()" /></td>
                     @*@Html.ValidationMessageFor(model => model.StudentSign, "", new { @class = "text-danger" })*@
                 </tr>
                 <tr>
                     <td><label>Signature of Parent</label></td>
-<<<<<<< HEAD
                     <td><img id="ParentSignPreview" src="/images/Photos/@parentsign" height="50" width="200">
-=======
                     <td><img id="ParentSignPreview" height="50" width="200">
->>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
                         <input type="file" name="ParentSign" id="ParentSign" onchange="PreviewImage2()" /></td>
                 </tr>
                 <br></br>
