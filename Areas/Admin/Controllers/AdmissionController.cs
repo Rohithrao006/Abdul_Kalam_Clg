@@ -61,6 +61,7 @@ namespace WebApplication.Areas.Admin.Controllers
             ViewBags();
             return View("AddStudent", frm);
         }
+<<<<<<< HEAD
         [HttpGet]
         public IActionResult UpdateStudent(int ApplicationNo)
         {
@@ -79,6 +80,13 @@ namespace WebApplication.Areas.Admin.Controllers
             }
             ViewBags();
             return View(frm);
+=======
+
+        public IActionResult UpdateStudent(int ApplicationNo)
+        {
+            //ViewBag.Student=_adm.getStudent(ApplicationNo);
+            return View();
+>>>>>>> 8659823ff32e4274a6e03abdac2a58eee59106d2
         }
     }
 }
