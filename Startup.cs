@@ -55,12 +55,10 @@ namespace WebApplication
             {
                 cfg.AddProfile(new AutoMapperProfileConfiguration());
             });
-
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
 
             services.AddMvc();
-
             // Add application services.
             services.AddSingleton<IAdmission,Admission>();
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -83,13 +81,9 @@ namespace WebApplication
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
             app.UseStaticFiles();
-
             app.UseIdentity();
-
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
-
             app.UseMvc(routes =>
             {
                  routes.MapRoute(

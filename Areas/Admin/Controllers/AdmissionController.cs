@@ -49,8 +49,6 @@ namespace WebApplication.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddStudent(ApplicationViewModel frm)// IFormFile Photo,IFormFile StudentSignature,IFormFile ParentSignature)// 
         {
-
-
             if (ModelState.IsValid)
             {
                 _adm.SaveImages(frm);
@@ -60,6 +58,11 @@ namespace WebApplication.Areas.Admin.Controllers
             }
             ViewBags();
             return View("AddStudent", frm);
+        }
+        [HttpGet]
+        public IActionResult EditStudent()
+        {
+            return View();
         }
 
         [HttpGet]
@@ -73,7 +76,8 @@ namespace WebApplication.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _adm.SaveImages(frm);
+                if(frm.StudentPhoto!=null)
+                    _adm.SaveImages(frm);
                 var appform = _mapper.Map<ApplicationForm>(frm);
                 _adm.UpdateStudent(appform);
                 return RedirectToAction("Index");

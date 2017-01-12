@@ -1,0 +1,17 @@
+@using WebApplication.Areas.Admin.Models 
+@{ 
+    ViewData["Title"]="Edit Student";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Edit Student</div>
+    <div class="panel-body">
+        <label>Application No</label> @Html.TextBox("ApplicationNo")
+        <button class="btn btn-info" id="edit" name="edit">Edit</button>
+    </div>
+</div>
+
+<br/><br/>
+<div id=Edit>
+</div>

@@ -11,9 +11,13 @@
     @using (Html.BeginForm("AddStudent","Admission",FormMethod.Post,new {id="StudentForm",enctype="multipart/form-data"})) {
     <div class="col-sm-10">
         <div class="panel panel-primary">
-            <center>
-                <h1><label>AdmissionForm</label></h1>
-            </center>
+            <div class="panel-heading">
+                <center>
+                    <h3>AdmissionForm</h3>
+                </center>
+            </div>
+            <div class="panel-body">
+            
             <table class="table">
                 <tr>
                     <td><label>ApplicationNo</label></td>
@@ -160,6 +164,7 @@
                     </td>
                 </tr>
             </table>
+            </div>
         </div>
     </div>
     }

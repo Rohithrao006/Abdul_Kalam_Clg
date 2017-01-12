@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace WebApplication.Areas.Admin.Models
 {
     public class ApplicationForm
@@ -16,6 +18,7 @@ namespace WebApplication.Areas.Admin.Models
         public string SchoolEducation{get; set;}
         public int HallTicketNo{get; set;}
         public double GradePoint{get; set;}
+        [Column(TypeName="Date")]
         public DateTime DOB{get; set;}
         public string SchoolName{get; set;}
         public string SchoolAddress{get; set;}
@@ -32,6 +35,7 @@ namespace WebApplication.Areas.Admin.Models
         public string StudentAddress{get; set;}
         public string ContactNo{get; set;}
         public string IdentificationMarks{get; set;}
+        [Column(TypeName="Date")]
         public DateTime DateOfAdmission{get; set;}
         public string Photo{get;set;}
         public string StudentSignature{get; set;}

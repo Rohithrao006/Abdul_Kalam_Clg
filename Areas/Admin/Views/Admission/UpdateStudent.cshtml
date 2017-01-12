@@ -7,15 +7,11 @@
      var photo=Model.Photo;
      var studentsign=Model.StudentSignature;
      var parentsign=Model.ParentSignature;
-
-@model ApplicationViewModel
-@{
-     ViewData["Title"]="AdmissionForm";
 }
 
 <h1>APPLICATION FORM</h1>
-<div class="row">
 
+<div class="row">
     @using (Html.BeginForm("UpdateStudent","Admission",FormMethod.Post,new {id="StudentForm",enctype="multipart/form-data"})) {
     <div class="col-sm-10">
         <div class="panel panel-primary">
@@ -32,15 +28,6 @@
                     <td><img id="PhotoPreview" src="/images/Photos/@photo" height="100" width="100">
                         <input type="file" name="StudentPhoto" id="StudentPhoto" onchange="PreviewImage()" />
                     <td>
-                    <td><label>ApplicationNo</label></td>
-                    <td>@ViewBag.appNo</td>
-                </tr>
-                <tr>
-                    <td><label>Photo of Student</label></td>
-                    <td><img id="PhotoPreview" height="100" width="100">
-                        <input type="file" name="StudentPhoto" id="StudentPhoto" onchange="PreviewImage()" />
-                        <td>
-                            <br/>@* @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })*@
                 </tr>
                 <tr>
                     <td><label>Name of The Student</label></td>
@@ -77,7 +64,6 @@
                 <tr>
                     <td><label>Date of Birth as per SSC</label></td>
                     <td><input type="date" name="DOB" value=Model.DOB></td>
-                    <td><input type="date" name="DOB"></td>
                     @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
                 </tr>
                 <tr>
@@ -162,18 +148,11 @@
                 <tr>
                     <td> <label>Signature of Student</label></td>
                     <td><img id="StudentSignPreview" src="/images/Photos/@studentsign" height="50" width="200">
-                    <td><input type="date" name="DateOfAdmission"></td>
-                </tr>
-                <tr>
-                    <td> <label>Signature of Student</label></td>
-                    <td><img id="StudentSignPreview" height="50" width="200">
-                        <input type="file" name="StudentSign" id="StudentSign" onchange="PreviewImage1()" /></td>
-                    @*@Html.ValidationMessageFor(model => model.StudentSign, "", new { @class = "text-danger" })*@
+                    <input type="file" name="StudentSign" id="StudentSign" onchange="PreviewImage1()" /></td>
                 </tr>
                 <tr>
                     <td><label>Signature of Parent</label></td>
                     <td><img id="ParentSignPreview" src="/images/Photos/@parentsign" height="50" width="200">
-                    <td><img id="ParentSignPreview" height="50" width="200">
                         <input type="file" name="ParentSign" id="ParentSign" onchange="PreviewImage2()" /></td>
                 </tr>
                 <br></br>
