@@ -1,17 +1,43 @@
 @using WebApplication.Areas.Admin.Models 
 @{ 
     ViewData["Title"]="Edit Student";
-}
+ }
 
-
+<br/><br/>
 <div class="panel panel-primary">
     <div class="panel-heading">Edit Student</div>
     <div class="panel-body">
         <label>Application No</label> @Html.TextBox("ApplicationNo")
         <button class="btn btn-info" id="edit" name="edit">Edit</button>
     </div>
+    <br><br>
+
 </div>
 
 <br/><br/>
+
 <div id=Edit>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $("#edit").click(function () {
+            var appNo = {
+                ApplicationNo: document.getElementById("ApplicationNo").value
+            }
+            debugger;
+            $.ajax({
+                url: "/Admin/Admission/UpdateStudent",
+                data: appNo,
+                Method: "Get",
+                success: function (response) {
+                    console.log(response);
+                    $("#Edit").load("/Admin/Admission/_EditStudent", response)
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        })
+    });
+</script>

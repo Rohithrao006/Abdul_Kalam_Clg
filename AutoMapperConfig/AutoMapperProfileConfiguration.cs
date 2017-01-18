@@ -11,6 +11,7 @@ public class AutoMapperProfileConfiguration : Profile
     : base(profileName)
     {
         CreateMap<ApplicationViewModel, ApplicationForm>();
+        CreateMap<ApplicationForm,ApplicationViewModel>();
         
     }
 }

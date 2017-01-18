@@ -13,16 +13,13 @@ using AutoMapper;
 namespace WebApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
-
     public class AdmissionController : Controller
     {
         private IAdmission _adm;
-        private IHostingEnvironment _environment;
         private readonly IMapper _mapper;
 
-        public AdmissionController(IHostingEnvironment environment, IAdmission adm, IMapper mapper)
+        public AdmissionController(IAdmission adm, IMapper mapper)
         {
-            _environment = environment;
             _adm = adm;
             _mapper = mapper;
         }
@@ -30,12 +27,14 @@ namespace WebApplication.Areas.Admin.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult AddStudent()
         {
             ViewBags();
             return View();
         }
+
         [NonAction]
         public void ViewBags()
         {
@@ -47,18 +46,19 @@ namespace WebApplication.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddStudent(ApplicationViewModel frm)// IFormFile Photo,IFormFile StudentSignature,IFormFile ParentSignature)// 
+        public IActionResult AddStudent(ApplicationViewModel frm)
         {
             if (ModelState.IsValid)
             {
-                _adm.SaveImages(frm);
                 var appform = _mapper.Map<ApplicationForm>(frm);
                 _adm.AddStudent(appform);
+                _adm.SaveImages(frm);
                 return RedirectToAction("Index");
             }
             ViewBags();
             return View("AddStudent", frm);
         }
+
         [HttpGet]
         public IActionResult EditStudent()
         {
@@ -66,25 +66,31 @@ namespace WebApplication.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult UpdateStudent(int ApplicationNo)
+        public JsonResult UpdateStudent(int ApplicationNo)
         {
             ViewBags();
-            return View(_adm.getStudent(ApplicationNo));
+            var appform = _adm.getStudent(ApplicationNo);
+            var AppViewForm = _mapper.Map<ApplicationViewModel>(appform);
+            return Json(AppViewForm);
         }
+
         [HttpPost]
         public IActionResult UpdateStudent(ApplicationViewModel frm)
         {
             if (ModelState.IsValid)
             {
-                if(frm.StudentPhoto!=null)
-                    _adm.SaveImages(frm);
                 var appform = _mapper.Map<ApplicationForm>(frm);
                 _adm.UpdateStudent(appform);
-                return RedirectToAction("Index");
+                _adm.SaveImages(frm.ApplicationNo, frm);
+                return RedirectToAction("EditStudent");
             }
-            ViewBags();
-            return View(frm);
+            return Json("Update failed");
         }
 
+        public PartialViewResult _EditStudent(ApplicationViewModel appform)
+        {
+            ViewBags();
+            return PartialView(appform);
+        }
     }
 }

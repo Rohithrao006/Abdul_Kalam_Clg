@@ -33,71 +33,71 @@
                 <tr>
                     <td><label>Name of The Student</label></td>
                     <td>@Html.TextBoxFor(m=>m.StudentName)</td>
-                    @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Father's/Guardian's Name</label></td>
                     <td><input asp-for="FatherName"></td>
-                    @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Mother's Name</label></td>
                     <td>@Html.TextBoxFor(m=>m.MotherName)</td>
-                    @Html.ValidationMessageFor(model => model.MotherName, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.MotherName, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Aadhar No</label></td>
                     <td><input asp-for="AadharNo"></td>
-                    @Html.ValidationMessageFor(model => model.AadharNo, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.AadharNo, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td> <label>SSC Pass Type</label></td>
                     <td> @Html.DropDownListFor(model=>model.SchoolEducation,ViewBag.SchoolEducation as IEnumerable<SelectListItem>,"-- Select --",new { @class = "form-control"})</td>
                     <td> <label>10TH HallTicket No</label></td>
                     <td><input asp-for="HallTicketNo"></td>
-                    @Html.ValidationMessageFor(model => model.HallTicketNo, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.HallTicketNo, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>GPA/GRADE Obtained</label></td>
                     <td>@Html.TextBoxFor(m=>m.GradePoint)</td>
-                    @Html.ValidationMessageFor(model => model.GradePoint, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.GradePoint, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Date of Birth as per SSC</label></td>
                     <td><input type="date" name="DOB"></td>
-                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Name of the School</label></td>
                     <td>@Html.TextBoxFor(m=>m.SchoolName)</td>
-                    @Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>School Address</label></td>
                     <td><input asp-for="SchoolAddress"></td>
-                    @Html.ValidationMessageFor(model => model.SchoolAddress, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.SchoolAddress, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Course Preferred</label></td>
                     <td> @Html.DropDownListFor(model=>model.CoursePreferred,ViewBag.Courses as IEnumerable
                         <SelectListItem>,"-- Select --",new { @class = "form-control"})</td>
-                    @Html.ValidationMessageFor(model => model.CoursePreferred, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.CoursePreferred, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Medium of Instruction</label></td>
                     <td><input asp-for="Medium"></td>
-                    @Html.ValidationMessageFor(model => model.Medium, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.Medium, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Language</label></td>
                     <td>@Html.DropDownListFor(model=>model.Language,ViewBag.Languages as IEnumerable
                         <SelectListItem>,"-- Select --",new { @class = "form-control"})</td>
-                    @Html.ValidationMessageFor(model => model.Language, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.Language, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Religion</label></td>
                     <td><input asp-for="Religion"></td>
-                    @Html.ValidationMessageFor(model => model.Religion, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.Religion, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Caste</label></td>
@@ -107,17 +107,17 @@
                 <tr>
                     <td><label>Sub Caste</label></td>
                     <td>@Html.TextBoxFor(m=>m.SubCaste)</td>
-                    @Html.ValidationMessageFor(model => model.SubCaste, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.SubCaste, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Mother Tongue </label></td>
                     <td><input asp-for="MotherTongue"></td>
-                    @Html.ValidationMessageFor(model => model.MotherTongue, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.MotherTongue, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td> <label>Total Fee</label></td>
                     <td>@Html.TextBoxFor(m=>m.TotalFee)</td>
-                    @Html.ValidationMessageFor(model => model.TotalFee, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.TotalFee, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Balance Fee</label></td>
@@ -126,17 +126,17 @@
                 <tr>
                     <td><label>Parent Occupation</label></td>
                     <td> @Html.TextBoxFor(model=>model.ParentOccupation)</td>
-                    @Html.ValidationMessageFor(model => model.ParentOccupation, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.ParentOccupation, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Address For Correspondence</label></td>
                     <td><textarea asp-for="StudentAddress"></textarea></td>
-                    @Html.ValidationMessageFor(model => model.SchoolAddress, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.SchoolAddress, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Contact Number</label></td>
                     <td><input asp-for="ContactNo"></td>
-                    @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                    <td>@Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td><label>Identification Marks</label></td>
@@ -145,6 +145,7 @@
                 <tr>
                     <td><label>Date of Admission</label></td>
                     <td><input type="date" name="DateOfAdmission"></td>
+                   <td>@Html.ValidationMessageFor(model => model.DateOfAdmission, "", new { @class = "text-danger" })</td>
                 </tr>
                 <tr>
                     <td> <label>Signature of Student</label></td>
@@ -155,12 +156,12 @@
                 <tr>
                     <td><label>Signature of Parent</label></td>
                     <td><img id="ParentSignPreview" height="50" width="200">
-                        <input type="file" name="ParentSign" id="ParentSign" onchange="PreviewImage2()" /></td>
+                    <input type="file" name="ParentSign" id="ParentSign" onchange="PreviewImage2()" /></td>
                 </tr>
                 <br></br>
                 <tr>
-                    <td colspan="2">
-                        <center><input type="submit" class="btn btn-info"></center>
+                    <td colspan="4">
+                        <input type="submit" class="btn btn-info">
                     </td>
                 </tr>
             </table>
@@ -170,3 +171,4 @@
     }
 </div>
 <script src="/js/imgPreview.js"></script>
+<script src"/js/validation.js"></script>
