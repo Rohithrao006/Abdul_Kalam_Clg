@@ -19,13 +19,13 @@
 <div id=Edit>
 </div>
 
+<script src"/js/validation.js"></script>
 <script>
     $(document).ready(function () {
         $("#edit").click(function () {
             var appNo = {
                 ApplicationNo: document.getElementById("ApplicationNo").value
             }
-            debugger;
             $.ajax({
                 url: "/Admin/Admission/UpdateStudent",
                 data: appNo,
@@ -41,3 +41,4 @@
         })
     });
 </script>
+

@@ -27,8 +27,7 @@
                     <td><label>Photo of Student</label></td>
                     <td><img id="PhotoPreview" height="100" width="100">
                         <input type="file" name="StudentPhoto" id="StudentPhoto" onchange="PreviewImage()" />
-                        <td>
-                            <br/>@* @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })*@
+                    </td>
                 </tr>
                 <tr>
                     <td><label>Name of The Student</label></td>
@@ -151,7 +150,6 @@
                     <td> <label>Signature of Student</label></td>
                     <td><img id="StudentSignPreview" height="50" width="200">
                         <input type="file" name="StudentSign" id="StudentSign" onchange="PreviewImage1()" /></td>
-                    @*@Html.ValidationMessageFor(model => model.StudentSign, "", new { @class = "text-danger" })*@
                 </tr>
                 <tr>
                     <td><label>Signature of Parent</label></td>
@@ -171,4 +169,4 @@
     }
 </div>
 <script src="/js/imgPreview.js"></script>
-<script src"/js/validation.js"></script>
+<script src="/js/validation.js"></script>

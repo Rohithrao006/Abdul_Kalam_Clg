@@ -13,12 +13,12 @@ using AutoMapper;
 namespace WebApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class AdmissionController : Controller
+    public class StudentAdmissionController : Controller
     {
-        private IAdmission _adm;
+        private readonly IAdmission _adm;
         private readonly IMapper _mapper;
 
-        public AdmissionController(IAdmission adm, IMapper mapper)
+        public StudentAdmissionController(IAdmission adm, IMapper mapper)
         {
             _adm = adm;
             _mapper = mapper;
@@ -91,6 +91,11 @@ namespace WebApplication.Areas.Admin.Controllers
         {
             ViewBags();
             return PartialView(appform);
+        }
+
+        public IActionResult DeleteStudent(ApplicationViewModel appform)
+        {
+            return Json("Deleted Student");
         }
     }
 }

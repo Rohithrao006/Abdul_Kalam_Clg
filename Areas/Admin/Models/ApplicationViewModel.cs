@@ -17,7 +17,7 @@ namespace WebApplication.Areas.Admin.Models
         [StringLength(30)]
         public string MotherName { get; set; }
         [Required]
-        [StringLength(16),MinLength(16),MaxLength(16)]
+        [StringLength(12),MinLength(12),MaxLength(12)]
         public string AadharNo { get; set; }
         [Required]
         public string SchoolEducation { get; set; }

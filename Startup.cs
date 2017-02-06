@@ -9,9 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApplication.Data;
-using WebApplication.Models;
-using WebApplication.Services;
 using WebApplication.Areas.Admin.Models;
 using WebApplication.Areas.Admin.Services;
 namespace WebApplication
@@ -44,12 +41,7 @@ namespace WebApplication
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             // Add framework services.
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
 
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
@@ -61,8 +53,6 @@ namespace WebApplication
             services.AddMvc();
             // Add application services.
             services.AddSingleton<IAdmission,Admission>();
-            services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,19 +72,16 @@ namespace WebApplication
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
-            app.UseIdentity();
+            //app.UseIdentity();
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
             app.UseMvc(routes =>
             {
                  routes.MapRoute(
                     name: "areaRoute",
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
             });
-           // context.Database.Migrate();
-            context.Database.EnsureCreated(); 
+            context.Database.Migrate();
+           // context.Database.EnsureCreated(); 
         }
     }
 }

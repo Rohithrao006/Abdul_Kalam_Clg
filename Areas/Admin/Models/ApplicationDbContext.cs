@@ -10,5 +10,6 @@ namespace  WebApplication.Areas.Admin.Models
         }
 
         public DbSet<ApplicationForm> ApplicationForms{get;set;}
+        public DbSet<Status> Statuses{get;set;}
     }
 }

@@ -7,8 +7,8 @@ $(document).ready(function () {
             MotherName: "required",
             AadharNo: {
                 required: true,
-                minlength: 16,
-                maxlength: 16
+                minlength: 12,
+                maxlength: 12
             },
             SchoolEducation: "required",
             HallTicketNo: "required",
@@ -32,7 +32,8 @@ $(document).ready(function () {
             ContactNo: {
                 required: true,
                 minlength: 10,
-                maxlength: 13
+                maxlength: 13,
+                
             },
             IdentificationMarks: "required",
             DateOfAdmission: {
@@ -49,7 +50,7 @@ $(document).ready(function () {
                 minlength: "enter 16 characters",
                 maxlength: "enter correct  AadharNo"
             },
-            SchoolEducation:"Please Enter Education type",
+            SchoolEducation: "Please Enter Education type",
             HallTicketNo: "Please Enter HallTicketNo",
             GradePoint: "Please Enter GradePoint",
             DOB: {
@@ -70,12 +71,16 @@ $(document).ready(function () {
             ContactNo: {
                 required: "Please Enter SchoolName",
                 minlength: "ContactNo at least have 10 characters",
-                maxlength:  "ContactNo atmost have 13 characters"
+                maxlength: "ContactNo atmost have 13 characters"
             },
             IdentificationMarks: "Please Enter IdentificationMarks",
             DateOfAdmission: {
-                required:"Please Enter DateOfAdmission",
-            }   
+                required: "Please Enter DateOfAdmission",
+            }
+        },
+ 
+        submitHandler: function (form) {
+            form.submit();
         }
     });
 });
